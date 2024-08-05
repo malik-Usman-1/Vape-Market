@@ -4,11 +4,11 @@ import { FaPlay } from "react-icons/fa";
 const About2 = () => {
   return (
     <>
-    <div className=' bg-black px-14  pt-20'>
-        <div className=' grid grid-cols-2 gap-10'>
+    <div className=' bg-black sm:px-14 px-5  pt-20'>
+        <div className=' grid lg:grid-cols-2 gap-10'>
             <div className=' border-2 border-white relative '>
 
-                <img src="../assets/img/about-image.jpg" alt="" />
+                <img src="../assets/img/about-image (1).jpg" alt="" />
                 <div className=' h-24 w-24 bg-white rounded-full absolute inset-0  m-auto text-orange-500  flex justify-center items-center text-2xl'>
                 <FaPlay />
                 </div>
