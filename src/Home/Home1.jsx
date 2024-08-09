@@ -33,14 +33,13 @@ const Home1 = () => {
   }, []);
   return (
    <>
-   <div>
 
-   <div className='relative overflow-hidden '>
-      <div className='relative z-10 overflow-hidden pb-16 '>
-   <Nav/>
+   <div className='relative  overflow-hidden      ' >
+      <div className='relative z-[1] overflow-hidden sm:pb-24 pb-16 pt-12 '>
+   {/* <Nav/> */}
 
        
-        <div className={` lg:w-1/2  px-16 space-y-8 pt-20 ${animateText ? 'animate-slide-in' : ''}`}>
+        <div className={` lg:w-1/2  sm:px-16 px-6 sm:space-y-12 space-y-6 sm:pt-20  pt-6 ${animateText ? 'animate-slide-in' : ''}`}>
           <div className={`slide-in-text ${animateText ? 'animate-delay-1' : ''}`}>
             <div className='flex items-center gap-2'>
               <img src="../assets/img/fire (1).svg" alt="" />
@@ -61,8 +60,19 @@ const Home1 = () => {
           </div>
           <div className={`slide-in-text ${animateText ? 'animate-delay-5' : ''}`}>
             <div className='space-x-6 flex'>
-              <button className='rounded-full h-12 w-32 bg-orange-500 text-white'>Shop Now</button>
-              <button className='rounded-full h-12 w-32 bg-white text-orange-500'>View Details</button>
+              <button className=' relative  rounded-full h-12 w-32 bg-orange-500 text-white  font-semibold overflow-hidden group'>
+  <span className='relative z-10 group-hover:text-orange-500 duration-300'>Shop Now</span>
+
+  <div className='absolute inset-0 bg-white rounded-full  -translate-y-full group-hover:translate-y-0  duration-300 '></div>
+
+              </button>
+              <button className='relative rounded-full h-12 w-32 bg-white text-orange-500 font-semibold overflow-hidden group'>
+  <span className='relative z-10 group-hover:text-white duration-300'>View Details</span>
+  <div className='absolute inset-0 bg-orange-500 rounded-full  -translate-y-full group-hover:translate-y-0  duration-300 '></div>
+</button>
+
+
+
             </div>
           </div>
         </div>
@@ -75,7 +85,6 @@ const Home1 = () => {
       ))}
     </div>
 
-   </div>
    </>
   )
 }

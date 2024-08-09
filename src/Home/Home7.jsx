@@ -1,6 +1,6 @@
 import React from 'react'
 import Card3 from '../Cards/Card3'
-import { fourth,third } from '../Data';
+import { third } from '../Data';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import Card4 from '../Cards/Card4';
+
 
 const Home7 = () => {
   return (
@@ -95,46 +95,7 @@ const Home7 = () => {
         ))}
       </Swiper>
     </div>
-            <div className='  pb-16  pt-8'>
-          <h2 className='sm:text-3xl text-2xl text-white font-bold text-center'>Our Top Brands</h2>
-        </div>
-        <div className=' sm:px-14 px-5 pb-24'>
-
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={6}
-        //   pagination={{
-        //     clickable: true,
-        //   }}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-            1024: {
-              slidesPerView: 6,
-              spaceBetween: 10,
-            },
-          }}
-          // navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper"
-        >
-          {fourth.map((ele) => (
-            <SwiperSlide>
-              <Card4 Data={ele} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        </div>
+        
         <div  className=' sm:px-14 px-5'>
 
 

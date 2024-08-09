@@ -128,6 +128,7 @@ li {
   }
 }
 
+
 .carousel-image {
   position: absolute;
   top: 0;
@@ -201,6 +202,10 @@ li {
 .animate-delay-5 {
   animation-delay: 2.5s;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 
 .swiper {
@@ -296,3 +301,14 @@ li {
   background-image: url(../public/assets/img/about-bg\ \(2\).jpg);
   background-size: 100% 100%;
 }
+
+.swiper-pagination-bullet {
+  background-color:  white !important;
+  
+ 
+}
+
+.swiper-pagination-bullet-active {
+  background-color: darkorange !important;
+}
+

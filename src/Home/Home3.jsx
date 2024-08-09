@@ -12,7 +12,12 @@ const Home3 = () => {
             <h2  className=' sm:text-4xl text-2xl text-white font-bold'>The Best E-Liqued Bundles</h2>
             <p className=' text-gray-300 sm:text-base text-sm'>Sell Globally In Minutes With Localized Currencies Languages, And Experie In Every Market. Only A Variety Of Vaping Products</p>
             <div className=' sm:flex space-y-5 justify-between'>
-            <button className='rounded-full h-12 w-36  bg-white text-orange-500 font-bold'>Shop Now</button>
+            <button className=' relative  rounded-full h-12 w-32 bg-white text-orange-500 font-bold overflow-hidden group'>
+  <span className='relative z-10 group-hover:text-white duration-300'>Shop Now</span>
+
+  <div className='absolute inset-0 bg-orange-500 rounded-full  -translate-y-full group-hover:translate-y-0  duration-300 '></div>
+
+              </button>
             <button className='rounded-full h-12  w-60 border-2 border-gray-800  flex items-center gap-2 justify-center  '>
             <img src="../assets/img/fire.svg" alt="" />
             <h2 className='text-lg text-white font-bold'>GET <span className='text-orange-500'>25% OFF</span> NOW</h2>
@@ -26,7 +31,12 @@ const Home3 = () => {
             <h2  className=' sm:text-3xl text-2xl text-white font-bold'>New To Vapeing?</h2>
             <p className=' text-gray-300 sm:text-base text-sm'>Whereas Recognition Of The Inherent Dignity</p>
         
-            <button className='rounded-full h-12 w-36  bg-white text-orange-500 font-bold'>Shop Now</button>
+            <button className=' relative  rounded-full h-12 w-32 bg-white text-orange-500 font-bold overflow-hidden group'>
+  <span className='relative z-10 group-hover:text-white duration-300'>Shop Now</span>
+
+  <div className='absolute inset-0 bg-orange-500 rounded-full  -translate-y-full group-hover:translate-y-0  duration-300 '></div>
+
+              </button>
            
             
           </div>
@@ -42,7 +52,12 @@ const Home3 = () => {
             <h2  className=' sm:text-3xl text-2xl text-white font-bold'>Vap Mode</h2>
             <p className=' text-gray-300 sm:text-base text-sm'>Whereas Recognition Of The Inherent Dignity</p>
         
-            <button className='rounded-full h-12 w-36  bg-white text-orange-500 font-bold'>Shop Now</button>
+            <button className=' relative  rounded-full h-12 w-32 bg-white font-bold text-orange-500 overflow-hidden group'>
+  <span className='relative z-10 group-hover:text-white duration-300'>Shop Now</span>
+
+  <div className='absolute inset-0 bg-orange-500 rounded-full  -translate-y-full group-hover:translate-y-0  duration-300 '></div>
+
+              </button>
            
             
           </div>

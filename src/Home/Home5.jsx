@@ -12,7 +12,12 @@ const Home5 = () => {
             <h2  className=' sm:text-4xl text-2xl text-white font-bold'>Find Your Best Favourite</h2>
             <p className=' text-gray-300 sm:text-base text-sm'>Sell Globally In Minutes With Localized Currencies Languages, And Experie In Every Market. Only A Variety Of Vaping Products</p>
             <div className=' sm:flex  space-y-4 sm:space-y-0   w-max items-center  gap-1'>
-            <button className='rounded-full h-12 w-36   bg-orange-600  text-white font-bold'>Shop Now</button>
+            <button className=' relative  rounded-full h-12 w-32 bg-orange-500 text-white  font-semibold overflow-hidden group'>
+  <span className='relative z-10 group-hover:text-orange-500 duration-300'>Shop Now</span>
+
+  <div className='absolute inset-0 bg-white rounded-full  -translate-y-full group-hover:translate-y-0  duration-300 '></div>
+
+              </button>
             <button className='rounded-full h-12  w-60 border-2 border-gray-800  flex items-center gap-2 justify-center  '>
             <img src="../assets/img/fire.svg" alt="" />
             <h2 className='text-lg text-white font-bold'>GET <span className='text-orange-500'>25% OFF</span> NOW</h2>

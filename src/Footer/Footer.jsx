@@ -4,11 +4,60 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaPaperPlane } from "react-icons/fa";
+import { fourth } from '../Data';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Card4 from '../Cards/Card4';
+
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const Footer = () => {
   return (
     <>
-      <div className=''>
+      <div className=' bg-black'>
+        
+      <div className='  pb-16  pt-8'>
+          <h2 className='sm:text-3xl text-2xl text-white font-bold text-center'>Our Top Brands</h2>
+        </div>
+        <div className=' sm:px-14 px-5 pb-24'>
+
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={6}
+        //   pagination={{
+        //     clickable: true,
+        //   }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 6,
+              spaceBetween: 10,
+            },
+          }}
+          // navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+        >
+          {fourth.map((ele) => (
+            <SwiperSlide>
+              <Card4 Data={ele} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        </div>
         <div className='  bg-black footer sm:px-14 px-5  pb-14'>sm:gap-0
           <div className='grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 md:gap-0 pb-20'>
             <div className=' space-y-8'>

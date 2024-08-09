@@ -4,7 +4,7 @@ import { MdHome } from "react-icons/md";
 const About1 = () => {
   return (
    <>
-   <div>
+   <div  id='about'>
     <div className=' bg-black  py-36 About1 flex justify-center items-center text-center  '>
         <div className=' space-y-6'>
             <h2 className=' text-white text-4xl font-bold'>About Us</h2>

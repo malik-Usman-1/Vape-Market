@@ -13,7 +13,12 @@ const Card3 = ({ Data }) => {
         <div className=' flex flex-col items-start  gap-5 '>
           <h2 className=' text-start text-white lg:text-xl text-lg'>{Data.head3}</h2>
           <p className=' text-gray-300 text-start lg:text-base text-sm'>{Data.para2}</p>
-          <button className='rounded-full lg:h-12 h-10 lg:w-32 w-28 lg:text-base text-sm  bg-white  text-orange-500 font-semibold'>Shop Now</button>
+          <button className=' relative  rounded-full h-12 w-32 bg-white text-orange-500 font-semibold overflow-hidden group'>
+  <span className='relative z-10 group-hover:text-white duration-300'>Shop Now</span>
+
+  <div className='absolute inset-0 bg-orange-500 rounded-full  -translate-y-full group-hover:translate-y-0  duration-300 '></div>
+
+              </button>
         </div>
       </div>
     </div>
