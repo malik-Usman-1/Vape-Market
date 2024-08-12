@@ -202,9 +202,6 @@ li {
 .animate-delay-5 {
   animation-delay: 2.5s;
 }
-html {
-  scroll-behavior: smooth;
-}
 
 
 
@@ -311,4 +308,6 @@ html {
 .swiper-pagination-bullet-active {
   background-color: darkorange !important;
 }
+
+
 

@@ -58,7 +58,7 @@ const Home6 = () => {
            
           </div>
           <div className='flex justify-center items-center'>
-            <div className='card sm:h-[83vh] h-[50vh] w-[50vh] sm:w-[83vh] rounded-full sm:p-14 p-9'>
+            <div className='card sm:h-[83vh] h-[49vh] w-[49vh] sm:w-[83vh] rounded-full sm:p-14 p-8'>
               <div className='flex justify-center home6 items-center  '>
                 <Swiper
                   slidesPerView={1}

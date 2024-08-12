@@ -98,7 +98,7 @@ function Nav() {
           </div>
         </div>
       </div>
-      <div className='sm:py-3   bg-[#191919]   items-center    grid grid-cols-2'>
+      <div className='  bg-[#191919]   items-center    grid grid-cols-2'>
         <div className='  pl-4 sm:pl-0   '>
 
       
@@ -124,7 +124,13 @@ function Nav() {
           >
           <li>About Us</li>
           </Link>
-              <li>Pages</li>
+          <Link to='/shop'
+                  onClick={handleclose} 
+                  > 
+              <li>Shop</li>
+              
+          </Link>
+
               <li>Blog</li>
               <li>Contact Us</li>
                   </ul>
@@ -135,7 +141,7 @@ function Nav() {
         </div>
 
                       )}
-            <ul className='lg:flex text-white gap-12 pl-16 items-center h-full hidden '>
+            <ul className='lg:flex text-white gap-12  pt-4  pl-16 items-center  hidden '>
               <Link to='/'
                  >
               <li>Home</li>
@@ -146,9 +152,9 @@ function Nav() {
               >
               <li>About Us</li>
               </Link>
-              <Link to='/paget'>
+              <Link to='/shop'>
 
-              <li>Pages</li>
+              <li>Shop</li>
               </Link>
               <Link to='blog'>
 
