@@ -80,49 +80,49 @@ const second =[
         img2:'../assets/img/product-image2 (1).png',
         img3:'../assets/img/product-image4 (1).png',
 
-        head2:'Menthol E-Cigarette Kit',
+        head2:'Disposable Sub-Ohm Tank',
         para1:'$49.50'
     },
     {
         img2:'../assets/img/product-image3 (1).png',
         img3:'../assets/img/product-image5 (1).png',
 
-        head2:'Menthol E-Cigarette Kit',
+        head2:'POP Extra Strawberry',
         para1:'$49.50'
     },
     {
         img2:'../assets/img/product-image4 (1).png',
         img3:'../assets/img/product-image6 (1).png',
 
-        head2:'Menthol E-Cigarette Kit',
+        head2:'Battery And Charger Kit',
         para1:'$49.50'
     },
     {
         img2:'../assets/img/product-image5 (1).png',
         img3:'../assets/img/product-image7 (1).png',
 
-        head2:'Menthol E-Cigarette Kit',
+        head2:'Pods Sold Separately',
         para1:'$49.50'
     },
     {
         img2:'../assets/img/product-image6 (1).png',
         img3:'../assets/img/product-image4 (1).png',
 
-        head2:'Menthol E-Cigarette Kit',
+        head2:'GeekVape Obelisk Pod',
         para1:'$49.50'
     },
     {
         img2:'../assets/img/product-image7 (1).png',
         img3:'../assets/img/product-image5 (1).png',
 
-        head2:'Menthol E-Cigarette Kit',
+        head2:'POP Extra Strawberry',
         para1:'$49.50'
     },
     {
         img2:'../assets/img/product-image8 (1).png',
         img3:'../assets/img/product-image6 (1).png',
 
-        head2:'Menthol E-Cigarette Kit',
+        head2:'100ml Nic Salt Juice',
         para1:'$49.50'
     },
     
