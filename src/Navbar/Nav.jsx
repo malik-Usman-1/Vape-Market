@@ -84,10 +84,10 @@ function Nav() {
           <input type="text"  onClick={() => setshowinp(true)} name="" id="" className='h-14 w-96 rounded-full pl-16 relative outline-none hidden lg:block' placeholder='Search For' />
           <FaSearch className='lg:absolute -ml-4 text-xl text-orange-500' onClick={()=>{setshowinp(true)}} />
           {showinp && (
-            <div className=' bg-black  bg-opacity-50 fixed inset-0  z-50 '>
-              <div className={` bg-white p-2 w-full fixed top-0 left-0  ${modal}`}>
+            <div className=' bg-black  bg-opacity-60 fixed inset-0  z-50 '>
+              <div className={`  bg-orange-500 p-2 w-full fixed top-0 left-0  ${modal}`}>
                 <div className=' flex  items-center justify-center     sm:px-24 px-6 lg:px-52'>
-                <input onChange={handlesearch} value={search} type="text" className='flex-grow p-2 focus:outline-none border-2 border-gray-300 rounded placeholder:text-gray-400' placeholder='What are you looking for?' />
+                <input onChange={handlesearch} value={search} type="text" className='flex-grow p-2 focus:outline-none border-2 border-black bg-transparent rounded placeholder:text-black' placeholder='Search' />
                 {filter.length > 0 && (
                  <div className='  bg-black sm:top-20 top-16  absolute  lg:w-3/5  w-4/5  '>
                               <div className='flex flex-wrap sm:gap-14 gap-5 justify-center overflow-auto sm:px-8 px-3  sm:max-h-96 max-h-80 pt-6'>
@@ -104,7 +104,7 @@ function Nav() {
                 )}
                 
                 <button
-                          className="ml-4 text-gray-400 text-2xl flex justify-center items-center h-8 w-8 hover:bg-gray-700 hover:text-white  duration-500  rounded-full"
+                          className="ml-4  text-black text-2xl flex justify-center items-center h-8 w-8 hover:bg-gray-700 hover:text-white  duration-500  rounded-full"
                           onClick={() => setshowinp(false)}
                         >
                           <IoIosClose />
