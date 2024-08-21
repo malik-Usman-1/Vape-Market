@@ -7,6 +7,7 @@ import Nav from './Navbar/Nav';
 import Footer from './Footer/Footer';
 import Shopscreen from './Screens/Shopscreen';
 import ScrollToTopButton from './ScrollToTopButton/ScrollToTopButton';
+import Contactscreen from './Screens/Contactscreen';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
     <Route path='/about' element={<Aboutscreen/>}/>
     <Route path='/shop' element={<Shopscreen/>}/>
     <Route path='/blog' element={<Blogscreen/>}/>
+    <Route path='/contact' element={<Contactscreen/>}/>
+
 
 
    </Routes>

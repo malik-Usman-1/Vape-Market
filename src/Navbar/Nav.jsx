@@ -196,9 +196,22 @@ function Nav() {
               <li>Shop</li>
               
           </Link>
+          <Link to='/blog'
+                  onClick={handleclose} 
+
+          >
 
               <li>Blog</li>
+          </Link>
+
+              <Link to='/contact'
+                  onClick={handleclose} 
+
+              >
+
               <li>Contact Us</li>
+          </Link>
+
                   </ul>
                  
 
@@ -222,11 +235,15 @@ function Nav() {
 
               <li>Shop</li>
               </Link>
-              <Link to='blog'>
+              <Link to='/blog'>
 
               <li>Blog</li>
               </Link>
+          <Link to='/contact'>
+
               <li>Contact Us</li>
+              </Link>
+
             </ul>
           </div>
           <div className=' md:flex xl:pr-14  sm:px-4 xl:px-0 justify-end   gap-10  hidden'>
