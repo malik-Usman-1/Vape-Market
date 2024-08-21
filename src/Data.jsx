@@ -225,4 +225,43 @@ const fourth= [
        
     },
 ]
-export {first,second,third,fourth};
+
+const five = [
+    {
+        img6:'../assets/img/blog-g1.jpg',
+        head4:'Close up picture of the sapling of the vape is'
+    },
+    {
+        img6:'../assets/img/blog-g2.jpg',
+        head4:'Elevate Your Vaping Experience'
+    },
+    {
+        img6:'../assets/img/blog-g3.jpg',
+        head4:'Discover a World a lot of Vapor Delights'
+    },
+    {
+        img6:'../assets/img/blog-g4.jpg',
+        head4:'Vape in Style, Vape with Passion'
+    },
+    {
+        img6:'../assets/img/blog-g5.jpg',
+        head4:'Navigating the Cosmos: Exploring the Mysteries'
+    },
+    {
+        img6:'../assets/img/blog-g6.jpg',
+        head4:'Redefining Wellness Embrace Health, Mindfulness'
+    },
+    {
+        img6:'../assets/img/blog-g7.jpg',
+        head4:'Innovate to Elevate: Shaping the Future of Technology'
+    },
+    {
+        img6:'../assets/img/blog-g8.jpg',
+        head4:'Harmony in Diversity Embracing Unity, Celebrating'
+    },
+    {
+        img6:'../assets/img/blog-g9.jpg',
+        head4:'The Power of Empathy Cultivating Kindness'
+    },
+]
+export {first,second,third,fourth,five};

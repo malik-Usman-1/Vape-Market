@@ -1,10 +1,13 @@
 import React from 'react'
+import Blog1 from '../Blog/Blog1'
+import Blog2 from '../Blog/Blog2'
 
 const Blogscreen = () => {
   return (
-    <div>
-      Blog
-    </div>
+  <>
+  <Blog1/>
+  <Blog2/>
+  </>
   )
 }
 
