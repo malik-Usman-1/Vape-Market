@@ -73,7 +73,7 @@ const second =[
     {
         img2:'../assets/img/product-image1 (1).png',
         img3:'../assets/img/product-image3 (1).png',
-        head2:'Menthol E-Cigarette Kit',
+        head2:'Menthool E-Cigarette Kit',
         para1:'$49.50'
     },
     {
@@ -87,7 +87,7 @@ const second =[
         img2:'../assets/img/product-image3 (1).png',
         img3:'../assets/img/product-image5 (1).png',
 
-        head2:'POP Extra Strawberry',
+        head2:'POP Extra Strawberry Kit',
         para1:'$49.50'
     },
     {
@@ -101,28 +101,28 @@ const second =[
         img2:'../assets/img/product-image5 (1).png',
         img3:'../assets/img/product-image7 (1).png',
 
-        head2:'Pods Sold Separately',
+        head2:'Pods Sold Separately Kit',
         para1:'$49.50'
     },
     {
         img2:'../assets/img/product-image6 (1).png',
         img3:'../assets/img/product-image4 (1).png',
 
-        head2:'GeekVape Obelisk Pod',
+        head2:'GeekVape Obelisk Pod Kit',
         para1:'$49.50'
     },
     {
         img2:'../assets/img/product-image7 (1).png',
         img3:'../assets/img/product-image5 (1).png',
 
-        head2:'POP Extra Strawberry',
+        head2:'POP Extra Strawberry Tank',
         para1:'$49.50'
     },
     {
         img2:'../assets/img/product-image8 (1).png',
         img3:'../assets/img/product-image6 (1).png',
 
-        head2:'100ml Nic Salt Juice',
+        head2:'100ml Nicc Salt Juice Kit',
         para1:'$49.50'
     },
     

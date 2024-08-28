@@ -2,6 +2,7 @@ import React from 'react'
 import Card2 from '../Cards/Card2'
 import { second } from '../Data'
 import { FaStar } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Shop2 = () => {
   return (
@@ -52,11 +53,15 @@ Showing 1–12 of 17 results</h2>
             </div>
           </div>
         </div>
-        <div className='lg:col-span-3 flex flex-wrap gap-6 justify-center'>
-          {second.map((ele) => (
-            <Card2 key={ele.id} Data={ele} />
-          ))}
-        </div>
+        <div className='  col-span-3 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid gap-6'>
+  {second.map((ele, index) => (
+    <div key={index}>
+      <Link to={`/product/${index}`}>
+        <Card2 Data={ele} />
+      </Link>
+    </div>
+  ))}
+</div>
       </div>
     </div>
   )
