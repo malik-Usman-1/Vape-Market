@@ -4,6 +4,7 @@ import { second } from '../Data';
 import { Link } from 'react-router-dom';
 
 const Home4 = () => {
+    const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   return (
     <>
       <div className='bg-black space-y-14 pt-14 pb-14 sm:px-14 px-5'>
@@ -22,8 +23,12 @@ const Home4 = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
   {second.map((ele, index) => (
     <div key={index}>
-      <Link to={`/product/${index}`}>
+      <Link to={`/product/${index}`}
+                onClick={scrollTop}
+
+      >
         <Card2 Data={ele} />
+
       </Link>
     </div>
   ))}

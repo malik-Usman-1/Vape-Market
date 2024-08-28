@@ -5,6 +5,8 @@ import { FaStar } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Shop2 = () => {
+  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
     <div className='bg-black py-14 px-5 sm:px-14'>
       <div className='md:flex md:items-center md:justify-between space-y-6 md:space-y-0'>
@@ -56,7 +58,9 @@ Showing 1–12 of 17 results</h2>
         <div className='  col-span-3 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid gap-6'>
   {second.map((ele, index) => (
     <div key={index}>
-      <Link to={`/product/${index}`}>
+      <Link to={`/product/${index}`}
+                onClick={scrollTop}
+                >
         <Card2 Data={ele} />
       </Link>
     </div>
