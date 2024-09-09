@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { LuStore } from "react-icons/lu";
 import { PiShippingContainerBold } from "react-icons/pi";
 import { FaSearch, FaAngleDown } from "react-icons/fa";
@@ -10,11 +9,6 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { IoIosClose } from "react-icons/io";
 import { second } from '../Data';
 
-
-
-
-
-
 const countries = [
   { name: 'Pakistan', flag: '../assets/img/images-removebg-preview.png' },
   { name: 'Phalastine', flag: '../assets/img/istockphoto-865196128-612x612-removebg-preview.png' },
@@ -22,43 +16,55 @@ const countries = [
 ];
 
 function Nav() {
+  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   const [isCenterModalOpen, setIsCenterModalOpen] = useState(false);
-
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
-  const [showinp,setshowinp] = useState (false)
-  const [modal,setmodal] = useState ('modalopen')
-  const [filter,setfilter] = useState ([])
-  const [search,setsearch] = useState ('')
+  const [showinp, setshowinp] = useState(false);
+  const [modal, setmodal] = useState('modalopen');
+  const [filter, setfilter] = useState([]);
+  const [search, setsearch] = useState('');
+  const modalRef = useRef(null); // Reference for the search modal
+  const inputRef = useRef(null); // Reference for the search input
 
-
-  useEffect(()=>{
-    if(showinp){
+  useEffect(() => {
+    if (showinp) {
       setTimeout(() => {
-        setmodal('modal-active')
-        
-      },600);
+        setmodal('modal-active');
+      }, 600);
+    } else {
+      setmodal('modal-exit');
+      setsearch('');
+      setfilter([]);
     }
-    else{setmodal('modal-exit')}
-  },[showinp])
+  }, [showinp]);
 
-  const handlesearch = (e) =>{
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Check if the click is outside the modal and input
+      if (modalRef.current && !modalRef.current.contains(event.target) && inputRef.current && !inputRef.current.contains(event.target)) {
+        setshowinp(false); // Close modal when clicked outside
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handlesearch = (e) => {
     const mydata = e.target.value.toLowerCase();
-    setsearch(mydata)
-    if(mydata === ''){
-      setfilter([])
-    }
-    else{
-      const filterdata = second.filter((item)=>
+    setsearch(mydata);
+    if (mydata === '') {
+      setfilter([]);
+    } else {
+      const filterdata = second.filter((item) =>
         item.head2.toLowerCase().includes(mydata)
-      )
-      setfilter(filterdata)
+      );
+      setfilter(filterdata);
     }
-    
   };
-  
-
-  
 
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
@@ -68,67 +74,73 @@ function Nav() {
     setSelectedCountry(country);
     setDropdownVisible(false);
   };
-  const handleclose = () =>{
-    setIsCenterModalOpen(!isCenterModalOpen)
-  }
+
+  const handleclose = () => {
+    setIsCenterModalOpen(!isCenterModalOpen);
+    scrollTop();
+  };
 
   return (
-    <div className=" sticky top-0 bg-black z-30  ">
-      <div className='grid grid-cols-2  xl:pr-14  sm:px-4 xl:px-0 py-3'>
+    <div className="sticky top-0 bg-black z-30">
+      <div className='grid grid-cols-2 xl:pr-14 sm:px-4 xl:px-0 py-3'>
         <div className='flex items-center justify-center sm:gap-28 gap-10'>
-          <Link to='/'>
-          <img src="../assets/img/logo (4).svg" alt="" className='sm:hidden h-9 w-24' />
-          <img src="../assets/img/logo (6).svg" alt="" className='sm:block hidden' />
+          <Link to='/'
+           onClick={() => {
+            scrollTop();
+          }}>
+            <img src="../assets/img/logo (4).svg" alt="" className='sm:hidden h-9 w-24' />
+            <img src="../assets/img/logo (6).svg" alt="" className='sm:block hidden' />
           </Link>
-         
-          <input type="text"  onClick={() => setshowinp(true)} name="" id="" className='h-14 w-96 rounded-full pl-16 relative outline-none hidden lg:block' placeholder='Search For' />
-          <FaSearch className='lg:absolute -ml-4 text-xl text-orange-500' onClick={()=>{setshowinp(true)}} />
+          <input type="text" ref={inputRef} onClick={() => setshowinp(true)} className='h-14 w-96 rounded-full pl-16 relative outline-none hidden lg:block' placeholder='Search For' />
+          <FaSearch className='lg:absolute -ml-4 text-xl text-orange-500' onClick={() => setshowinp(true)} />
           {showinp && (
-            <div className=' bg-black  bg-opacity-60 fixed inset-0  z-50 '>
-              <div className={`  bg-orange-500 p-2 w-full fixed top-0 left-0  ${modal}`}>
-                <div className=' flex  items-center justify-center     sm:px-24 px-6 lg:px-52'>
-                <input onChange={handlesearch} value={search} type="text" className='flex-grow p-2 focus:outline-none border-2 border-black bg-transparent rounded placeholder:text-black' placeholder='Search' />
-                {filter.length > 0 && (
-                 <div className='  bg-black sm:top-20 top-16  absolute  lg:w-3/5  w-4/5  '>
-                              <div className='flex flex-wrap sm:gap-14 gap-5 justify-center overflow-auto sm:px-8 px-3  sm:max-h-96 max-h-80 pt-6'>
-
-                  {filter.map((ele)=>(
-                      <div className=' space-y-4  '> 
-                        <img className=' sm:h-52 sm:w-44 h-20 w-24' src={ele.img2} alt='' />
-                        <h2 className=' text-white   text-[8px]  sm:text-sm'>{ele.head2}</h2>
+            <div className='bg-black bg-opacity-60 fixed inset-0 z-50'>
+              <div className={`bg-orange-500 p-2 w-full fixed top-0 left-0 ${modal}`} ref={modalRef}>
+                <div className='flex items-center justify-center sm:px-24 px-6 lg:px-52'>
+                  <input onChange={handlesearch} value={search} type="text" className='flex-grow p-2 focus:outline-none border-2 border-black bg-transparent rounded placeholder:text-black' placeholder='Search' />
+                  {filter.length > 0 && (
+                    <div className='bg-black sm:top-20 top-16 absolute lg:w-3/5 w-4/5'>
+                      <div className='flex flex-wrap sm:gap-14 gap-5 justify-center overflow-auto sm:px-8 px-3 sm:max-h-96 max-h-80 pt-6'>
+                        {filter.map((ele, index) => (
+                          <div className='space-y-4' key={index}>
+                            <Link to={`/product/${index}`}
+                              onClick={() => {
+                                scrollTop();
+                                setshowinp(false); // Close the search modal
+                              }}
+                            >
+                              <img className='sm:h-52 sm:w-44 h-20 w-24' src={ele.img2} alt='' />
+                              <h2 className='text-white text-[8px] sm:text-sm'>{ele.head2}</h2>
+                            </Link>
+                          </div>
+                        ))}
                       </div>
-                  ))}
-                 </div>
-
-                 </div>
-                )}
-                
-                <button
-                          className="ml-4  text-black text-2xl flex justify-center items-center h-8 w-8 hover:bg-gray-700 hover:text-white  duration-500  rounded-full"
-                          onClick={() => setshowinp(false)}
-                        >
-                          <IoIosClose />
-                        </button>
-
+                    </div>
+                  )}
+                  <button
+                    className="ml-4 text-black text-2xl flex justify-center items-center h-8 w-8 hover:bg-gray-700 hover:text-white duration-500 rounded-full"
+                    onClick={() => setshowinp(false)}
+                  >
+                    <IoIosClose />
+                  </button>
                 </div>
-               
               </div>
             </div>
           )}
         </div>
-        <div className='flex items-center justify-end  pr-3 gap-2'>
+        <div className='flex items-center justify-end pr-3 gap-2'>
           <div className='rounded-full bg-white hidden sm:flex overflow-hidden'>
             <div className='bg-orange-500 md:p-3 p-1'>
               <MdOutlineAccountCircle className='text-xl text-white' />
             </div>
-            <div className='p-3 hidden  lg:flex items-center justify-center'>
-              <h2 className=' xl:text-base text-xs '> Account</h2>
+            <div className='p-3 hidden lg:flex items-center justify-center'>
+              <h2 className='xl:text-base text-xs '>Account</h2>
             </div>
           </div>
           <div className='rounded-full bg-white flex overflow-hidden'>
             <div className='flex items-center gap-5 md:p-3 p-1'>
               <MdOutlineLocalGroceryStore className='text-xl text-orange-500' />
-              <h2 className='text-black  xl:text-base  text-xs hidden sm:block'>$0.00</h2>
+              <h2 className='text-black xl:text-base text-xs hidden sm:block'>$0.00</h2>
             </div>
             <div className='p-3 bg-black hidden md:block'>
               <h2 className='xl:text-xl text-xs text-white'>0</h2>
@@ -145,9 +157,6 @@ function Nav() {
             {dropdownVisible && (
               <div
                 className="absolute top-full mt-2 right-0 bg-white shadow-lg rounded-lg py-2 z-20 w-36 transition-opacity duration-300"
-                // initial={{ opacity: 0, translateY: -10 }}
-                // animate={{ opacity: 1, translateY: 0 }}
-                // exit={{ opacity: 0, translateY: -10 }}
               >
                 {countries.map((country) => (
                   <li
@@ -222,24 +231,40 @@ function Nav() {
                       )}
             <ul className='lg:flex text-white gap-12  pt-4  pl-16 items-center  hidden '>
               <Link to='/'
+               onClick={() => {
+                scrollTop();
+              }}
                  >
               <li>Home</li>
               </Link>
 
               <Link to='/about'
+               onClick={() => {
+                scrollTop();
+              }}
           
               >
               <li>About Us</li>
               </Link>
-              <Link to='/shop'>
+              <Link to='/shop'
+               onClick={() => {
+                scrollTop();
+              }}>
 
               <li>Shop</li>
               </Link>
-              <Link to='/blog'>
+              <Link to='/blog'
+               onClick={() => {
+                scrollTop();
+              }}
+              >
 
               <li>Blog</li>
               </Link>
-          <Link to='/contact'>
+          <Link to='/contact'
+           onClick={() => {
+            scrollTop();
+          }}>
 
               <li>Contact Us</li>
               </Link>
