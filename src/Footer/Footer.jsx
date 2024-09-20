@@ -58,7 +58,7 @@ const Footer = () => {
           ))}
         </Swiper>
         </div>
-        <div className='  bg-black footer sm:px-14 px-5  pb-14'>sm:gap-0
+        <div className='  bg-black footer sm:px-14 px-5  pb-14'>
           <div className='grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 md:gap-0 pb-20'>
             <div className=' space-y-8'>
               <h2 className='text-xl text-white'>Customer Service</h2>
